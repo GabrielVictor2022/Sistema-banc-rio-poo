@@ -43,19 +43,35 @@ public class ContaBancoTreino {
 			} else if (getSaldo() > 0) {
 				System.out.println("Erro, a conta precisa ser esvaziada para cancelar.");
 			} else {
-				System.out.println("Erro, os dÈbitos precisam ser pagos para cancelar.");
+				System.out.println("Erro, os d√©bitos precisam ser pagos para cancelar.");
 			}
 		} else {
-			System.out.println("A conta deve est· aberta para cancelar.");
+			System.out.println("A conta deve est√° aberta para cancelar.");
+		}
+	}
+	void transferir(double v) {
+		System.out.println("----------------------------");
+		if (this.getStatus()) {
+			if (this.getSaldo() >= 0 && v <= this.getSaldo()) {
+				// retirar de uma conta e colocar em outra
+				this.setSaldo(getSaldo() - v);
+				System.out.println("Transfer√™ncia de " + v + "R$ realizada na conta - " + getNumConta());
+
+
+			} else {
+				System.out.println("Saldo insuficiente para transferir.");
+			}
+		} else {
+			System.out.println("Imposs√≠vel transferir.");
 		}
 	}
 
 	public void depositar(double v) {
 		if (getStatus() == true) {
 			setSaldo(getSaldo() + v);
-			System.out.println("DepÛsito realizado com sucesso!");
+			System.out.println("Deposito de " + v + "R$ realizado na conta de " + getDono());
 		} else {
-			System.out.println("A conta deve est· aberta para depositar.");
+			System.out.println("A conta deve est√° aberta para depositar.");
 		}
 	}
 
@@ -63,12 +79,12 @@ public class ContaBancoTreino {
 		if (getStatus() == true) {
 			if (getSaldo() >= v) {
 				setSaldo(getSaldo() - v);
-				System.out.println("Saque no valor de " + v + "R$ realizado com sucesso!");
+				System.out.println("Saque de " + v + "R$ realizado na conta de " + getDono());
 			} else {
 				System.out.println("Saldo insuficiente para saque!");
 			}
 		} else {
-			System.out.println("A conta deve est· aberta para sacar.");
+			System.out.println("A conta deve est√° aberta para sacar.");
 		}
 	}
 
@@ -85,7 +101,7 @@ public class ContaBancoTreino {
 				System.out.printf("Mensalidade de %.2fR$ paga com sucesso!", v);
 			}
 		} else {
-			System.out.println("A conta deve est· aberta para ser paga a mensalidade.");
+			System.out.println("A conta deve est√° aberta para ser paga a mensalidade.");
 		}
 	}
 

@@ -20,8 +20,9 @@ public class Aula05Treino {
 			System.out.println("2 - Fechar Conta");
 			System.out.println("3 - Depositar");
 			System.out.println("4 - Sacar");
-			System.out.println("5 - Pagar Mensalidade");
-			System.out.println("6 - Estado Atual da Conta");
+			System.out.println("5 - Transferir");
+			System.out.println("6 - Pagar Mensalidade");
+			System.out.println("7 - Estado Atual da Conta");
 			System.out.println("0 - Sair");
 			System.out.print("Escolha sua opção: ");
 			escolha = teclado.nextInt();
@@ -64,12 +65,21 @@ public class Aula05Treino {
 				TimeUnit.SECONDS.sleep(3);
 				break;
 			case 5:
+				System.out.println("Abrindo Transferência...");
+				TimeUnit.SECONDS.sleep(3);
+				System.out.print("Digite o número da conta para Transferir: ");
+				cb.setNumConta(teclado.next());
+				System.out.print("Digite o valor que deseja Transferir: ");
+				cb.transferir(teclado.nextDouble());
+				TimeUnit.SECONDS.sleep(3);
+				break;
+			case 6:
 				System.out.println("Pagar mensalidade...");
 				TimeUnit.SECONDS.sleep(3);
 				cb.pagarMensal();
 				TimeUnit.SECONDS.sleep(3);
 				break;
-			case 6:
+			case 7:
 				System.out.println("Imprimindo Estado Atual...");
 				TimeUnit.SECONDS.sleep(3);
 				cb.estadoAtual();
@@ -88,6 +98,8 @@ public class Aula05Treino {
 		} while (escolha != 0);
 
 		teclado.close();
+		tecladoNome.close();
+
 
 	}
 

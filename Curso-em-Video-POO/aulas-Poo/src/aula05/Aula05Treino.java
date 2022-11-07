@@ -23,20 +23,20 @@ public class Aula05Treino {
 			System.out.println("5 - Pagar Mensalidade");
 			System.out.println("6 - Estado Atual da Conta");
 			System.out.println("0 - Sair");
-			System.out.print("Escolha sua opção: ");
+			System.out.print("Escolha sua opÃ§Ã£o: ");
 			escolha = teclado.nextInt();
 
 			System.out.println("####################");
 
 			switch (escolha) {
 			case 1:
-				System.out.println("Fodendo gostosinho...");
+				System.out.println("Abrindo conta...");
 				TimeUnit.SECONDS.sleep(3);
-				System.out.print("Qual tipo de conta você deseja(CC - CP)? ");
+				System.out.print("Qual tipo de conta vocÃª deseja(CC - CP)? ");
 				cb.abrirConta(teclado.next());
 
 				TimeUnit.SECONDS.sleep(2);
-				System.out.print("Informe o número da conta: ");
+				System.out.print("Informe o nÃºmero da conta: ");
 				cb.setNumConta(teclado.next());
 
 				TimeUnit.SECONDS.sleep(2);
@@ -50,7 +50,7 @@ public class Aula05Treino {
 				TimeUnit.SECONDS.sleep(3);
 				break;
 			case 3:
-				System.out.println("Abrindo Depósito..");
+				System.out.println("Abrindo DepÃ³sito..");
 				TimeUnit.SECONDS.sleep(3);
 				System.out.print("Digite o valor para ser depositado: ");
 				cb.depositar(teclado.nextDouble());
@@ -81,7 +81,7 @@ public class Aula05Treino {
 				System.out.println("Obrigado!");
 				break;
 			default:
-				System.out.println("Opção inválida.");
+				System.out.println("OpÃ§Ã£o invÃ¡lida.");
 				TimeUnit.SECONDS.sleep(3);
 				break;
 			}
